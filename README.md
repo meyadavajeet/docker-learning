@@ -212,3 +212,91 @@ docker inspect imageId
 docker inspect 0a6cd0db41a4
 
 ```
+
+How to give different port by exposing the images port
+
+```
+docker run --name nginxServer -d -p 8080:80 nginx
+```
+
+    Here -p is ued for the  for the port
+        8080 is used for the for your machine
+        80 is the port of the nginx port (8080 exposing the 80 port of the nginx server)
+
+List all the running container
+
+```
+docker ps
+```
+
+Stop the running container
+
+```
+docker stop nginx
+
+docker stop a4b6504d0cd7
+
+```
+
+Here, "nginx" is the image name & "a4b6504d0cd7" is the containerId
+
+---
+
+To see history of all the container
+
+```
+docker ps -a
+```
+
+To remove containers from the history
+
+```
+docker rm containerId
+
+docker rm a4b6504d0cd7
+```
+
+To remove multiple container from the history (use space b/w two container ids)
+
+```
+docker rm a4b6504d0cd7 4c6b3e563e4a fa7a5ab6ccb2
+```
+
+To list docker images
+
+```
+docker images
+```
+
+To remove docker images use rmi - rmi full form is remove images
+
+```
+docker rmi imageName
+
+docker rmi nginx
+
+docker rmi openJdk:18     { description - here 18 is the tag or version of jdk}
+```
+
+Run images in Interactive and detached mode
+
+```
+docker run --name containerName -it -d imageName
+
+eg -
+docker run --name pythonContainer1 -it -d python3
+
+```
+
+How to restart running container in detached mode
+
+```
+docker restart containerName
+
+docker restart containerId
+
+eg - docker restart pythonContainer1
+
+         docker restart fa7a5ab6ccb2
+
+```
