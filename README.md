@@ -300,3 +300,105 @@ eg - docker restart pythonContainer1
          docker restart fa7a5ab6ccb2
 
 ```
+
+docker login - This command used to login to docker hub
+
+```
+docker login
+```
+
+docker commit - This command used to create and save image of the edited container you local local system
+
+```
+docker commit
+```
+
+docker push -This command helps to push your docker image on the docker hub repository
+
+```
+docker push
+```
+
+docker network - Used to fetch the detail of network inside the cluster
+
+```
+docker network
+```
+
+docker copy - Copy files from docker to local system
+
+```
+docker copy
+```
+
+docker logs - For checking logs
+
+```
+docker logs
+
+docker logs containerName
+```
+
+docker volume - To create volume so that docker container can use to store data on the allocated volume
+
+```
+docker volume
+```
+
+docker logout - logout form the docker hub
+
+```
+docker logout
+```
+
+---
+
+---
+
+---
+
+---
+
+# How to write docker image files
+
+---
+
+---
+
+---
+
+---
+
+steps - create new folder for the image you want to create and save the file name with Dockerfile, where D is always capital
+
+eg - create a ubuntu image
+
+ubuntu
+
+```
+#main image
+FROM ubuntu
+
+#author name
+MAINTAINER Ajeet Yadav
+
+#update command
+RUN apt update
+
+#startup command
+
+CMD ["echo","this is my first ubuntu image using docker file"]
+
+```
+
+build docker image (Please move to the folder in which your image exist)
+
+```
+docker build -t myubuntuimage .
+
+    here,
+        -t - tag for giving imageName
+        myubuntuimage - name of the image
+        . (dot) - build current folder
+
+```
