@@ -1,0 +1,30 @@
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    networks:
+      - my_network
+    depends_on:
+      - db
+      - rcache
+  rcache:
+    image: "redis:${REDIS_TAG}"
+    # profiles:
+    #   - rediscache
+    networks:
+      - my_network
+  db:
+    image: "mysql:latest"
+    # environment:
+    #   MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
+    #   MYSQL_DATABASE: "${MYSQL_DATABASE}"
+    env_file:
+      - mysql.config.env
+    networks:
+      - my_network
+
+# custom network
+networks:
+  my_network:
+    driver: bridge

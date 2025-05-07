@@ -1,0 +1,9 @@
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+  db:
+    image: "mysql:latest"
+    env_file:
+      - mysql.config.env
