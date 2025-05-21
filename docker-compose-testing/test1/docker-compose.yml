@@ -8,8 +8,5 @@ services:
 
   db:
     image: "mysql:latest"
-    # environment:
-    #   MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
-    #   MYSQL_DATABASE: "${MYSQL_DATABASE}"
     env_file:
       - mysql.config.env
