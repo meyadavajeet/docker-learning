@@ -1,0 +1,143 @@
+# It has two extensions: yaml and yml
+# The file is used to store configuration data in a structured format
+
+# strings
+name: "YAML Example"
+description: "This is an example of a YAML file with multiple extensions"
+age: 30
+pricce: 19.99
+# boolean
+is_active: true
+is_admin: false
+
+# false values may be represented as:
+# - false
+# - no
+# - 0
+# - off
+# - n
+# - none
+# - null
+
+
+# true values may be represented as:
+# - true
+# - yes
+# - 1
+# - on
+# - y
+# - all
+# - any
+# - some
+
+# null values may be represented as:
+# - null
+# - ~
+
+# lists/ sequences
+fruits:
+  - apple
+  - banana
+  - orange
+vegetables:
+  - carrot
+  - broccoli
+  - spinach
+# dictionaries/ maps
+person:
+  name: John Doe
+  age: 30
+  email: yml@yml.yml
+  address:
+    street: 123 Main St
+    city: Anytown
+    state: CA
+    zip: 12345
+
+# multi-line strings
+descriptions: |
+  This is a multi-line string
+  that spans multiple lines.
+  It is useful for long text blocks.
+  It preserves line breaks and indentation.
+# block literals
+note: >
+  This is a block literal
+  that also spans multiple lines.
+  However, it replaces line breaks with spaces.
+  It is useful for long text blocks
+  where you want to preserve the text but not the formatting.
+# comments
+# This is a comment
+# Comments can be used to explain the purpose of the file
+# YAML files can be used for various purposes, such as:
+# - Configuration files
+# - Data serialization
+# - Data exchange between different programming languages
+# - Documenting APIs
+# YAML files are often used in conjunction with other technologies, such as:
+# - Docker
+# - Kubernetes
+# - Ansible
+# - CI/CD pipelines
+# YAML files can be validated using various tools, such as:
+# - yamllint
+# - PyYAML 
+
+# Inline list
+inline_list: [apple, banana, orange]
+# Inline dictionary
+inline_dict: {name: John Doe, age: 30, email: something@gmail.com}
+
+# List of dictionaries
+people:
+  - name: John Doe
+    age: 30
+    email: something@gmail.com
+  - name: Jane Smith
+    age: 25
+    email: jane.smith@gmail.com
+# Nested lists and dictionaries
+nested:
+  - name: John Doe
+    age: 30
+    hobbies:
+      - reading
+      - hiking
+      - swimming
+  - name: Jane Smith
+    age: 25
+    hobbies:
+      - painting
+      - dancing
+      - cooking
+# Anchors and aliases
+person1: &person_anchor
+  name: John Doe
+  age: 30
+  email: johndoe@gmail.com
+person2:
+  <<: *person_anchor
+  name: Jane Smith
+  age: 25
+
+
+# Multiple documents
+---
+# This is the first document
+name: Document 1
+description: This is the first document in the YAML file
+...
+---
+# This is the second document
+name: Document 2
+description: This is the second document in the YAML file
+---
+# This is the third document
+name: Document 3
+description: This is the third document in the YAML file
+---
+# This is the fourth document
+name: Document 4
+description: This is the fourth document in the YAML file
+
